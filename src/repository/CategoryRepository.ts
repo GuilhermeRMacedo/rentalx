@@ -24,6 +24,10 @@ class CategoryRepository {
 
     return newCategory;
   }
+
+  readAll(): Category[] {
+    return this.categories;
+  }
 }
 
 export { CategoryRepository };
