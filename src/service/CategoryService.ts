@@ -1,5 +1,5 @@
 import { Category } from '../model/Category';
-import { CategoryRepository } from '../repository/CategoryRepository';
+import { ICategoryRepository } from '../repository/ICategoryRepository';
 
 interface ICreateCategoryDto {
   name: string;
@@ -7,7 +7,7 @@ interface ICreateCategoryDto {
 }
 
 class CategoryService {
-  constructor(private categoryRepository: CategoryRepository) {}
+  constructor(private categoryRepository: ICategoryRepository) {}
 
   create({ name, description }: ICreateCategoryDto): Category {
     const categoryAlreadyExist = this.categoryRepository.findByName(name);
