@@ -12,6 +12,12 @@ class CategoryController {
 
     return response.status(201).send(newCategory);
   }
+
+  readAll(request: Request, response: Response): Response {
+    const categories = this.categoryService.readAll();
+
+    return response.status(200).send(categories);
+  }
 }
 
 export { CategoryController };

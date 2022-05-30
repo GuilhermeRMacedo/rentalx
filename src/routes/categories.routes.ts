@@ -15,9 +15,7 @@ categoriesRoutes.post('/', (request, response) => {
 });
 
 categoriesRoutes.get('/', (request, response) => {
-  const categories = categoryRepository.readAll();
-
-  return response.status(200).send(categories);
+  return categoryController.readAll(request, response);
 });
 
 export { categoriesRoutes };

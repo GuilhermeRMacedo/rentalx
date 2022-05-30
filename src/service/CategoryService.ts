@@ -18,6 +18,10 @@ class CategoryService {
 
     return this.categoryRepository.create({ name, description });
   }
+
+  readAll(): Category[] {
+    return this.categoryRepository.readAll();
+  }
 }
 
 export { CategoryService };
